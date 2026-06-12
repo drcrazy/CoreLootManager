@@ -18,10 +18,10 @@ jobs:
           args: "-o -u -m .pkgmeta"
 
       - name: Print some stuff
-        run: tree -a
+        run: ls -la .release
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7
         with:
           name: Artifacts
-          path: CoreLootManager/CoreLootManager/.release/
+          path: ./.release/*.zip
