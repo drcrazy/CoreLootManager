@@ -10,7 +10,7 @@ jobs:
         run: sudo apt install -y subversion
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Bigwigs packager
         uses: BigWigsMods/packager@master
@@ -18,7 +18,7 @@ jobs:
           args: "-o -u -m .pkgmeta"
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Artifacts
-          path: .release
+          path: CoreLootManager/.release
