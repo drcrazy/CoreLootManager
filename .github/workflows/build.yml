@@ -17,6 +17,9 @@ jobs:
         with:
           args: "-o -u -m .pkgmeta"
 
+      - name: Print some stuff
+        run: tree -a
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v7
         with:
