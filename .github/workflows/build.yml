@@ -18,7 +18,7 @@ jobs:
           args: "-o -u -m .pkgmeta"
 
       - name: Print some stuff
-        run: ls -la .release
+        run: readlink -f .release/*.zip
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7
