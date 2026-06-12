@@ -1,0 +1,24 @@
+name: Build
+on: workflow_dispatch
+
+jobs:
+  packager:
+    name: Package and Upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SVN
+        run: sudo apt install -y subversion
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Bigwigs packager
+        uses: BigWigsMods/packager@master
+        with:
+          args: "-o -u -m .pkgmeta"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Artifacts
+          path: .release
