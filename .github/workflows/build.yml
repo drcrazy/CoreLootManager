@@ -24,4 +24,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: Artifacts
-          path: /home/runner/work/CoreLootManager/CoreLootManager/.release/*.zip
+          path: .release/*.zip
+          archive: false
