@@ -19,6 +19,7 @@ jobs:
 
       - name: Print some stuff
         run: readlink -f .release/*.zip
+        run: find .release -name "*.zip" -type f
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7
